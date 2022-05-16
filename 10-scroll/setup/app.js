@@ -8,6 +8,24 @@ let date = document.getElementById('date');
 date.innerHTML = new Date().getFullYear();
 
 // ********** close links ************
+let navToggleBar = document.querySelector('.nav-toggle');
+let linksContainer = document.querySelector('.links-container');
+let links = document.querySelector('.links');
+
+navToggleBar.addEventListener('click', ()=>{
+    // linksContainer.classList.toggle('show-links');     !!! NOT AFFECTIVE WAY TO DO !!!
+    
+    let containerHeight = linksContainer.getBoundingClientRect().height; 
+    let linksHeight = links.getBoundingClientRect().height;
+
+    if(containerHeight === 0){
+        linksContainer.style.height = `${linksHeight}px`;
+    }else{
+        linksContainer.style.height = 0;
+    }
+   
+
+});
 
 // ********** fixed navbar ************
 
