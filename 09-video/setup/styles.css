@@ -3,7 +3,7 @@
 Fonts
 ===============
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 /*
 =============== 
@@ -43,8 +43,8 @@ Variables
   --clr-green-dark: hsl(125, 67%, 44%);
   --clr-green-light: hsl(125, 71%, 66%);
   --clr-black: #222;
-  --ff-primary: "Roboto", sans-serif;
-  --ff-secondary: "Open Sans", sans-serif;
+  --ff-primary: 'Space Grotesk', sans-serif;
+  --ff-secondary: 'Space Grotesk', sans-serif;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -221,12 +221,12 @@ h1 {
 
 .switch-btn {
   position: absolute;
-  bottom: 7%;
-  left: 7%;
-  width: 7rem;
-  height: 2rem;
+  bottom: 30%;
+  left: 45%;
+  width: 10rem;
+  height: 3rem;
   display: flex;
-  border-radius: var(--radius);
+  border-radius: 1rem;
   align-items: center;
   justify-content: space-around;
   border: none;
@@ -237,7 +237,7 @@ h1 {
   font-size: 0.85rem;
   cursor: pointer;
   text-transform: capitalize;
-  color: var(--clr-primary-5);
+  color: rgb(157, 0, 255);
 }
 .switch {
   position: absolute;
@@ -245,8 +245,8 @@ h1 {
   height: 100%;
   top: 0;
   left: 0;
-  background: var(--clr-primary-5);
-  border-radius: var(--radius);
+  background: rgb(157, 0, 255);
+  border-radius: 1rem;
   margin: 0;
   display: block;
   transition: var(--transition);
@@ -255,7 +255,7 @@ h1 {
   left: 50%;
 }
 /* header after */
-/* header::after {
+header::after {
   content: "";
   position: absolute;
   top: 0;
@@ -264,4 +264,4 @@ h1 {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   z-index: -1;
-} */
+}
