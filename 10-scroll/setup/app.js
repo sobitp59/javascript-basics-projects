@@ -14,7 +14,7 @@ let links = document.querySelector('.links');
 
 navToggleBar.addEventListener('click', ()=>{
     // linksContainer.classList.toggle('show-links');     !!! NOT AFFECTIVE WAY TO DO !!!
-    
+
     let containerHeight = linksContainer.getBoundingClientRect().height; 
     let linksHeight = links.getBoundingClientRect().height;
 
@@ -23,11 +23,25 @@ navToggleBar.addEventListener('click', ()=>{
     }else{
         linksContainer.style.height = 0;
     }
-   
-
 });
 
 // ********** fixed navbar ************
+let navbar = document.getElementById('nav');
+let topLink = document.querySelector('.top-link');
+
+window.addEventListener('scroll', ()=>{
+    let navScrollHeight = window.pageYOffset;
+    let navbarHeight = navbar.getBoundingClientRect().height;
+    
+    // fixed nav
+    if(navScrollHeight > navbarHeight){
+        navbar.classList.add('fixed-nav');
+    }else{
+        navbar.classList.remove('fixed-nav');
+    }
+
+
+});
 
 // ********** smooth scroll ************
 // select links
