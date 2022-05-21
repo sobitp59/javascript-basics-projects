@@ -47,7 +47,36 @@ window.addEventListener('scroll', ()=>{
         topLink.classList.remove('show-link');
     }
 
+    linksContainer.style.height = 0;
 });
 
 // ********** smooth scroll ************
 // select links
+let scrollLinks = document.querySelectorAll('.scroll-link');
+scrollLinks.forEach((scrollLink)=>{
+    scrollLink.addEventListener('click', (e)=>{
+        // prevent default behaviour
+        e.preventDefault();
+
+        // navigate to cliked link
+        let id = e.currentTarget.getAttribute('href').slice(1);
+        let element = document.getElementById(id);
+        let navbarHeight = navbar.getBoundingClientRect().height;
+        let linksContainer = document.querySelector('.links-container');
+        let containerHeight = linksContainer.getBoundingClientRect().height;
+        let fixedNavbar = navbar.classList.contains('fixed-nav');
+        let position = element.offsetTop - navbarHeight;
+        
+        if(!fixedNavbar){
+            position = position - navbarHeight;
+        }
+        if(navbarHeight > 82){
+            position = position + containerHeight;
+        }
+
+        window.scrollTo({
+            left : 0,
+            top : position
+     })
+    })
+})
